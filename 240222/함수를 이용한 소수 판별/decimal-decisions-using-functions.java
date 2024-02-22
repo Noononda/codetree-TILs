@@ -19,7 +19,7 @@ public class Main {
         int count = 0;
         for (int i = a; i <= b; i++) {
             for (int j = 2; j < i; j++) {
-                if (i % j == 0 && i == 1) {
+                if (i % j == 0 || i == 1) {
                     count++;
                 }
             }
