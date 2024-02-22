@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        
+
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
 
@@ -17,21 +17,22 @@ public class Main {
     public static int sum(int a, int b) {
         int total = 0;
         int count = 0;
-        for (int i = a; i <= b; i++) {
-            for (int j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    count++;
-                } else if (i == 1) {
-                    count++;
+        if (a != 1 && b != 1) {
+            for (int i = a; i <= b; i++) {
+                for (int j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    total = total + i;
+                } else {
+                    count = 0;
                 }
             }
-            if (count == 0) {
-                total = total + i;
-            } else {
-                count = 0;
-            }
+        } else {
+            return 0;
         }
-
         return total;
     }
 }
